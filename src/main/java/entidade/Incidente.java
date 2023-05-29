@@ -24,50 +24,63 @@ public class Incidente {
 	@Column(nullable = false)
 	private Date dataEnvio;
 	@Column(nullable = false)
-	private Integer VitimaId;
+	private Integer vitimaId;
 	@Column(nullable = false)
-	private Integer SupostoAgressorId;
-	
+	private Integer supostoAgressorId;
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	public String getTipoViolacao() {
 		return tipoViolacao;
 	}
+
 	public void setTipoViolacao(String tipoViolacao) {
 		this.tipoViolacao = tipoViolacao;
 	}
+
 	public String getProvidencias() {
 		return providencias;
 	}
+
 	public void setProvidencias(String providencias) {
 		this.providencias = providencias;
 	}
+
 	public Date getDataEnvio() {
 		return dataEnvio;
 	}
+
 	public void setDataEnvio(Date dataEnvio) {
 		this.dataEnvio = dataEnvio;
 	}
+
 	public Integer getVitimaId() {
-		return VitimaId;
+		return vitimaId;
 	}
+
 	public void setVitimaId(Integer vitimaId) {
-		VitimaId = vitimaId;
+		this.vitimaId = vitimaId;
 	}
+
 	public Integer getSupostoAgressorId() {
-		return SupostoAgressorId;
+		return supostoAgressorId;
 	}
+
 	public void setSupostoAgressorId(Integer supostoAgressorId) {
-		SupostoAgressorId = supostoAgressorId;
+		this.supostoAgressorId = supostoAgressorId;
 	}
 }
