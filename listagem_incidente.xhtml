@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Listagem de Incidentes</title>
+</h:head>
+<h:body>
+	<p:growl id="message" showDetail="true" />
+	<h:form id="formulario">
+		<p:panel header="Listagem de Incidentes">
+			<p:dataTable value="#{incidenteBean.lista}" var="e">
+				<p:column headerText="Id">
+					<p:outputLabel value="#{e.id}" />
+				</p:column>
+				<p:column headerText="Descrição">
+					<p:outputLabel value="#{e.descricao}" />
+				</p:column>
+				<p:column headerText="Tipo Violação">
+					<p:outputLabel value="#{e.tipoViolacao}" />
+				</p:column>
+				<p:column headerText="Providências">
+					<p:outputLabel value="#{e.providencias}" />
+				</p:column>
+				<p:column headerText="Data de envio">
+					<p:outputLabel value="#{e.dataEnvio}" />
+				</p:column>
+				<p:column headerText="Vítima">
+					<p:outputLabel value="#{e.vitimaId}" />
+				</p:column>
+				<p:column headerText="Agressor">
+					<p:outputLabel value="#{e.supostoAgressorId}" />
+				</p:column>
+				<p:column headerText="Selecionar">
+					<p:commandButton value="Selecionar"
+						action="#{incidenteBean.selecionarIncidente}" ajax="false">
+						<f:setPropertyActionListener value="#{e}"
+							target="#{incidenteBean.incidente}" />
+					</p:commandButton>
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+		<p:panelGrid columns="2">
+			<p:link outcome="cadastro_incidente" value="Cadastrar Incidente" />
+			<p:link outcome="index" value="Deslogar" />
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>
